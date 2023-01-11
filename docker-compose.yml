@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: .
+      network: "host"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 128M
+    restart: always
+    network_mode: "host"
+    ports:
+      - 2514:2514
+      - 8122:8122
